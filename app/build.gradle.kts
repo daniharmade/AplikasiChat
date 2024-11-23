@@ -21,7 +21,12 @@ android {
     buildTypes {
         named("release") {
             isMinifyEnabled = false
-            setProguardFiles(listOf(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"))
+            setProguardFiles(
+                listOf(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
+            )
         }
     }
     compileOptions {
@@ -48,6 +53,7 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.firebase.auth)
     implementation(libs.googleid)
+    implementation(libs.firebase.database)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -55,4 +61,10 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.play.services.identity)
+
+    // Firebase UI Database
+    implementation(libs.firebase.ui.database)
+
+    // Glide
+    implementation(libs.glide)
 }
